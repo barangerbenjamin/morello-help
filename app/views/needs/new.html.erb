@@ -1,0 +1,5 @@
+<%= simple_form_for @need do |f| %>
+    <%= f.input :name, placeholder: "Eggs" %>
+    <%= f.text_area :note, placeholder: "Only free range" %>
+    <%= f.submit "Create need" %>
+<% end %>
