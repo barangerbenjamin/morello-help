@@ -10,3 +10,16 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.home-page {
+  height: calc(100vh - 55px);
+  position: relative;
+}
+
+.home-svg {
+  position: absolute;
+  bottom: 0;
+  img {
+    width: 100%;
+  }
+}
