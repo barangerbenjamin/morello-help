@@ -15,6 +15,8 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :flat_number %>
+    <%= f.input :complex, collection: [ "Amarelle", "Maraschino", "Rainier", "Santina" ] %>
   </div>
 
   <div class="form-actions">
