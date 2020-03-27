@@ -1,21 +1,25 @@
-<div class="home-page text-center">
-    <h1 class="mt-3">Morello help app!</h1>
-    <ul id="list-home">
-        <li>
-            <%= image_tag "list.svg", class: "svg-home-list" %>
-            <p class="mt-2">Check the list of favours to do</p>
-        </li>
-        <li>
-            <%= image_tag "shop.svg", class: "svg-home-list" %>
-            <p class="mt-2">Pledge to fullfill one</p>
-        </li>
-        <li>
-            <%= image_tag "payment.svg", class: "svg-home-list" %>
-            <p class="mt-2">The person you've helped can reimburse you through the app</p>
-        </li>
-    </ul>
-    <%= link_to "BROWSE", needs_path, class: "btn-morello" %>
-    <div class="home-svg">
-        <%= image_tag "morello.svg" %>
-    </div>
+<div class="container">
+  <div class="row">
+		<div class="home-page text-center">
+			<h1 class="mt-3">Morello help app!</h1>
+			<ul id="list-home">
+				<li>
+					<%= image_tag "list.svg", class: "svg-home-list" %>
+					<p class="mt-2">Check the list of favours to do</p>
+				</li>
+				<li>
+					<%= image_tag "shop.svg", class: "svg-home-list" %>
+					<p class="mt-2">Pledge to fullfill one</p>
+				</li>
+				<li class="col-&é">
+					<%= image_tag "payment.svg", class: "svg-home-list" %>
+					<p class="mt-2">The person you've helped can reimburse you through the app</p>
+				</li>
+			</ul>
+			<%= link_to "BROWSE", needs_path, class: "btn-morello" %>
+			<div class="home-svg">
+					<%= image_tag "morello.svg" %>
+			</div>
+		</div>
+	</div>    
 </div>
