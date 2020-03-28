@@ -4,15 +4,27 @@
       <% if @needs.any? %>
         <p class="title"><strong>SERVICES</strong></p>
         <% @needs.each do |need| %>
-          <div class="card-need">
-            <p><strong><%= need.name %></strong></p>
-            <p>x<%= need.quantity %></p>
-            <p><%= need.note %></p>
+          <div class="card-need mt-3 mb-3">
+            <p class="mt-3"><strong><%= need.name %></strong></p>
+            <% if need.quantity.zero? %>
+              <p>No quantity</p>
+            <% else %>
+              <p>x<%= need.quantity %></p>
+            <% end %>
+            <p class="title"><%= need.note %></p>
+            <div class="mb-2 mt-2">
+              <%= link_to "LEARN MORE", need_path(need), class: "learn-more" %>
+            </div>
+            <% if need.user.photo.attached? %>
+              <%= cl_image_tag need.user.photo.key, class: "user-avatar card-avatar" %>
+            <% else %>
+              <i class="far fa-user-circle user-avatar card-avatar"></i>
+            <% end %>
           </div>
         <% end %>	
       <% end %>
     </div>
-    <div class="col-12 text-center">
+    <div class="col-12 text-center mt-2 mb-3">
       <%= link_to "ADD ONE 👌", new_need_path, class: "btn-morello" %>
     </div>
   </div>
