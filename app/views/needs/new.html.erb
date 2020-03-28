@@ -1,6 +1,12 @@
-<%= simple_form_for @need do |f| %>
-    <%= f.input :name, placeholder: "Eggs" %>
-    <%= f.input :quantity %>
-    <%= f.text_area :note, placeholder: "Only free range" %>
-    <%= f.submit "Create need" %>
-<% end %>
+<div class="container">
+  <div class="row">
+		<div class="col-12">
+			<%= simple_form_for @need do |f| %>
+				<%= f.input :name, placeholder: "Eggs" %>
+				<%= f.input :quantity %>
+				<%= f.input :note, as: :text, placeholder: "Only free range", input_html: { rows: 3 } %>
+				<%= f.submit "Create need" %>
+			<% end %>
+		</div>
+	</div>
+</div>

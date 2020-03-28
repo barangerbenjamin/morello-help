@@ -1,3 +1,5 @@
 <% @needs.each do |need| %>
     <%= link_to need.name, need_path(need) %>
 <% end %>
+
+<%= cl_image_tag current_user.photo.key %>
