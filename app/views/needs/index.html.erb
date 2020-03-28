@@ -5,7 +5,7 @@
         <p class="title"><strong>SERVICES</strong></p>
         <% @needs.each do |need| %>
           <div class="card-need mt-3 mb-3">
-            <p class="mt-3"><strong><%= need.name %></strong></p>
+            <p class="need-title"><strong><%= need.name %></strong></p>
             <% if need.quantity.zero? %>
               <p>No quantity</p>
             <% else %>
