@@ -1,5 +1,17 @@
-<% @needs.each do |need| %>
-    <%= link_to need.name, need_path(need) %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% if @needs.any? %>
+        <p class="title"><strong>SERVICES</strong></p>
+        <% @needs.each do |need| %>
+          <p><strong><%= need.name %></strong></p>
+        <% end %>	
+      <% end %>
+    </div>
+    <p class="title"><strong>NEED HELP?</strong></p>
+    <div class="col-12 text-center">
+      <%= link_to "ADD ONE 👌", new_need_path, class: "btn-morello" %>
+    </div>
+  </div>
+</div>
 
-<%= cl_image_tag current_user.photo.key %>
