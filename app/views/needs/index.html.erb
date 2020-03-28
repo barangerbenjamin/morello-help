@@ -1,14 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-12">
+    <div class="col-12 cards-need mt-3">
       <% if @needs.any? %>
         <p class="title"><strong>SERVICES</strong></p>
         <% @needs.each do |need| %>
-          <p><strong><%= need.name %></strong></p>
+          <div class="card-need">
+            <p><strong><%= need.name %></strong></p>
+            <p>x<%= need.quantity %></p>
+            <p><%= need.note %></p>
+          </div>
         <% end %>	
       <% end %>
     </div>
-    <p class="title"><strong>NEED HELP?</strong></p>
     <div class="col-12 text-center">
       <%= link_to "ADD ONE 👌", new_need_path, class: "btn-morello" %>
     </div>
