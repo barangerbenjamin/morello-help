@@ -22,10 +22,15 @@
 }
 
 .learn-more {
+  text-decoration: none !important;
   line-height: 1;
   font-weight: bolder;
   font-size: 0.8rem;
   color: #4676C8;
+}
+
+.learn-more:hover {
+  color: #4676C8 !important;
 }
 
 .need-title {
