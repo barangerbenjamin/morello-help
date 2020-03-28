@@ -7,7 +7,7 @@
           <div class="card-need mt-3 mb-3">
             <p class="need-title"><strong><%= need.name %></strong></p>
             <% if need.quantity.zero? %>
-              <p>No quantity</p>
+              <p>-</p>
             <% else %>
               <p>x<%= need.quantity %></p>
             <% end %>
