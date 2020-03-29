@@ -24,8 +24,11 @@
     }
   }
   .top-right {
+    .link-need {
+      text-decoration: none;
+      color: black;
+    }
     background-color: #cacab4;
-    color: black;
     border-radius: 50%;
     i {
       padding: 8px;
