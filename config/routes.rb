@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :needs do
+    patch 'update_view_count', on: :member
     resources :services, only: [:new, :create]
   end
   resources :services, only: [:destroy]

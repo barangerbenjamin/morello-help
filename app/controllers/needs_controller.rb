@@ -1,5 +1,5 @@
 class NeedsController < ApplicationController
-    before_action :set_need, only: [:show]
+    before_action :set_need, only: [:show, :update_view_count]
     def index
       @needs = Need.all
     end
@@ -8,6 +8,11 @@ class NeedsController < ApplicationController
 
     def new
       @need = Need.new
+    end
+
+    def update_view_count
+      @need.update(view_count: @need.view_count + 1)
+      redirect_to need_path(@need)
     end
 
     def create
