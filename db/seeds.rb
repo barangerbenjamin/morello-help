@@ -18,7 +18,7 @@ becca.photo.attach(io: file, filename: 'avatar_becca', content_type: 'image/png'
 becca.save
 
 alex = User.new(email: "alex@gmail.com", first_name: "Alex", last_name: "Haumer", password: "password", flat_number: 42, complex: "Rainier")
-file = URI.open('https://res.cloudinary.com/dpsj3levs/image/upload/v1585396409/igribfuaz6tdh5mlledw.jpg')
+file = URI.open('https://res.cloudinary.com/dpsj3levs/image/upload/v1585511122/f2ckghely9gzkurn8qb1.jpg')
 alex.photo.attach(io: file, filename: 'avatar_alex', content_type: 'image/png')
 alex.save
 
