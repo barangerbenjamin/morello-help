@@ -1,0 +1,32 @@
+.card-new {
+  height: 40vh;
+  border-radius: 20px;
+  box-shadow: 0 8px 2px -2px rgba(20,20,20,0.4);
+  background-color: black;
+  color: white;
+  .top-left {
+    p {
+      margin: 0;
+      font-size: 12px;
+      font-weight: bolder;
+    }
+    .top-left-date {
+      opacity: 0.6;
+    }
+    .avatar-box {
+      border: 2px solid #cacab4;
+      border-radius: 50px;
+      img {
+        padding: 5px;
+      }
+    }
+  }
+  .top-right {
+    background-color: #cacab4;
+    color: black;
+    border-radius: 50%;
+    i {
+      padding: 8px;
+    }
+  }
+}

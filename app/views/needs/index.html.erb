@@ -30,3 +30,34 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-1">
+      <div class="card-new mt-3 mb-3">
+        <div class="card-new-top d-flex align-items-center justify-content-between p-3">
+          <div class="top-left d-flex align-items-center">
+            <div class="avatar-box">
+              <%= cl_image_tag @needs[2].user.photo.key, class: "avatar" %>
+            </div>
+            <div class="top-left-info ml-2">
+              <p class="top-left-section">PIANO DAILY</p>
+              <p class="top-left-date">Today</p>
+            </div>
+          </div>
+          <div class="top-right">
+            <i class="fas fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+      <div class="card-new mt-3 mb-3">
+        <div class="card-new-top">
+          <div class="top-left">
+
+          </div>
+          <div class="top-right">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
