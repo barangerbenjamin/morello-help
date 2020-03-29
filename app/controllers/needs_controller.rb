@@ -27,7 +27,7 @@ class NeedsController < ApplicationController
     end
 
     def need_params
-       params.require(:need).permit(:name, :note, :quantity) 
+       params.require(:need).permit(:name, :note, :quantity, :category) 
     end
     
 end
