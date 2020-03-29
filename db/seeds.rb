@@ -25,10 +25,10 @@ alex.save
 puts "Users created!"
 puts "Creating needs..."
 
-need1 = Need.create(user: ben, name: "The lost egg", quantity: 6, note: "I know it is a lot to ask but can you only take free range please.")
-need2 = Need.create(user: ben, name: "Toilet roll party 🚽", quantity: 12, note: "I work at Croydon Hospital and I don't have time to go shopping.")
-need3 = Need.create(user: becca, name: "Dinner 🍕", quantity: 1, note: "I'm a healthcare worker and I don't have time to cook for myself.")
-need4 = Need.create(user: becca, name: "Soap", quantity: 1, note: "People are hoarding and I can't find some anywhere, can you?")
-need5 = Need.create(user: alex, name: "Sit my dog", quantity: 0, note: "Sit my dog whilst I'm saving lives!")
+need1 = Need.create(user: ben, category: "Groceries", end_time: DateTime.now + 5.hours, name: "The lost egg", quantity: 6, note: "I know it is a lot to ask but can you only take free range please.")
+need2 = Need.create(user: ben, category: "Groceries", end_time: DateTime.now + 1.day, name: "Toilet roll party 🚽", quantity: 12, note: "I work at Croydon Hospital and I don't have time to go shopping.")
+need3 = Need.create(user: becca, category: "Groceries", end_time: DateTime.now + 4.day, name: "Dinner 🍕", quantity: 1, note: "I'm a healthcare worker and I don't have time to cook for myself.")
+need4 = Need.create(user: becca, category: "Groceries", end_time: DateTime.now + 3.day, name: "Soap", quantity: 1, note: "People are hoarding and I can't find some anywhere, can you?")
+need5 = Need.create(user: alex, category: "Service", end_time: DateTime.now + 2.day, name: "Sit my dog", quantity: 0, note: "Sit my dog whilst I'm saving lives!")
 
 puts "Needs created!"
