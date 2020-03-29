@@ -1,73 +1,45 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 cards-need mt-3">
-      <% if @needs.any? %>
-        <p class="title"><strong>SERVICES</strong></p>
-        <% @needs.each do |need| %>
-          <div class="card-need mt-3 mb-3">
-            <p class="need-title"><strong><%= need.name %></strong></p>
-            <% if need.quantity.zero? %>
-              <p>-</p>
-            <% else %>
-              <p>x<%= need.quantity %></p>
-            <% end %>
-            <p class="title"><%= need.note %></p>
-            <div class="mb-2 mt-2">
-              <%= link_to "LEARN MORE", need_path(need), class: "learn-more" %>
+    <% if @needs.any? %>
+      <% @needs.each do |need| %>
+        <div class="col-10 offset-1">
+          <div class="card-new mt-3 mb-3">
+            <div class="card-new-top d-flex align-items-center justify-content-between p-3">
+              <div class="top-left d-flex align-items-center">
+                <div class="avatar-box">
+                  <%= cl_image_tag need.user.photo.key, class: "avatar" %>
+                </div>
+                <div class="top-left-info ml-2">
+                  <p class="top-left-section">PIANO DAILY</p>
+                  <p class="top-left-date">Today</p>
+                </div>
+              </div>
+              <div class="top-right">
+                <i class="fas fa-arrow-right"></i>
+              </div>
             </div>
-            <% if need.user.photo.attached? %>
-              <%= cl_image_tag need.user.photo.key, class: "user-avatar card-avatar" %>
-            <% else %>
-              <i class="far fa-user-circle user-avatar card-avatar"></i>
-            <% end %>
+            <div class="card-new-middle text-center mt-3">
+              <h3>Cinematic Piano</h3>
+              <div class="middle-infos d-flex justify-content-around mt-3">
+                <div></div>
+                <div class="d-flex">
+                  <p><i class="fas fa-eye"></i>9,543</p>
+                  <p>-</p>
+                  <p><i class="fas fa-hourglass-half"></i>5h 35m</p>
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div class="card-new-bottom text-center d-flex align-items-center">
+                <i class="fas fa-thumbs-up"></i>
+                <div class="big-i">
+                  <i class="fas fa-trophy big"></i>
+                </div>
+                <i class="fas fa-thumbs-down"></i>
+            </div>
           </div>
-        <% end %>	
+        </div>
       <% end %>
-    </div>
-    <div class="col-12 text-center mt-2 mb-3">
-      <%= link_to "ADD ONE 👌", new_need_path, class: "btn-morello" %>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-10 offset-1">
-      <div class="card-new mt-3 mb-3">
-        <div class="card-new-top d-flex align-items-center justify-content-between p-3">
-          <div class="top-left d-flex align-items-center">
-            <div class="avatar-box">
-              <%= cl_image_tag @needs[2].user.photo.key, class: "avatar" %>
-            </div>
-            <div class="top-left-info ml-2">
-              <p class="top-left-section">PIANO DAILY</p>
-              <p class="top-left-date">Today</p>
-            </div>
-          </div>
-          <div class="top-right">
-            <i class="fas fa-arrow-right"></i>
-          </div>
-        </div>
-        <div class="card-new-middle text-center mt-3">
-          <h3>Cinematic Piano</h3>
-          <div class="middle-infos d-flex justify-content-around mt-3">
-            <div></div>
-            <div class="d-flex">
-              <p><i class="fas fa-eye"></i>9,543</p>
-              <p>-</p>
-              <p><i class="fas fa-hourglass-half"></i>5h 35m</p>
-            </div>
-            <div></div>
-          </div>
-        </div>
-        <div class="card-new-bottom text-center d-flex align-items-center">
-            <i class="fas fa-thumbs-up"></i>
-            <div class="big-i">
-              <i class="fas fa-trophy big"></i>
-            </div>
-            <i class="fas fa-thumbs-down"></i>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
 </div>
