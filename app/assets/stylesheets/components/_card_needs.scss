@@ -32,6 +32,9 @@
     }
   }
   .card-new-middle {
+    h3 {
+      font-weight: bolder;
+    }
     .middle-infos {
       i {
         margin: 0px 5px;
@@ -45,5 +48,22 @@
   }
   .card-new-bottom {
     position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    i {
+      margin: 0px 10px;
+      color: white;
+    }
+    .big-i {
+      border-radius: 50%;
+      background-color: #cacab4;
+      i {
+        color: black;
+        padding: 20px 10px;
+        font-size: 16px;
+      }
+    }
   }
 }
