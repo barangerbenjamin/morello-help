@@ -5,7 +5,7 @@
 				<%= f.input :name, placeholder: "Eggs", input_html: { class: "need-form-input", style: "color: #fff" } %>
 				<%= f.input :quantity, input_html: { class: "need-form-input", style: "color: #fff" } %>
         <%= f.input :end_time, as: :string, input_html: { class: "flatpickr need-form-input", style: "color: #fff" } %>
-        <%= f.input :category, collection: ["Groceries", "Service"], input_html: { class: "need-form-input", style: "color: #fff" } %>
+        <%= f.input :category, collection: ["Groceries", "Service"], default: "Groceries", input_html: { class: "need-form-input", style: "color: #fff" } %>
 				<%= f.input :note, as: :text, placeholder: "Only free range", input_html: { rows: 3, style: "color: #fff", class: "need-form-input" } %>
 				<%= f.submit "Create need", class: "need-form-input" %>
 			<% end %>
