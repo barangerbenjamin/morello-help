@@ -45,15 +45,13 @@
             </div>
             <div class="card-new-bottom text-center d-flex align-items-center">
                 <i class="fas fa-thumbs-up"></i>
-                <div class="big-i">
                   <% service = need.services.first %>
                   <% service_user = need.services.first.user if service %>
                   <% if service_user && service_user.photo.attached? %>
-                    <%= cl_image_tag need.user.photo.key, class: "avatar-big" %>
+                    <%= cl_image_tag service_user.photo.key, class: "avatar-big" %>
                   <% else %>
-                    <i class="fas fa-user-circle"></i>
+                    <i class=" big fas fa-user-circle"></i>
                   <% end %>
-                </div>
                 <i class="fas fa-thumbs-down"></i>
             </div>
           </div>

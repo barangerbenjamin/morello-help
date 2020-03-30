@@ -2,7 +2,6 @@
   height: 40vh;
   border-radius: 20px;
   box-shadow: 0 8px 2px -2px rgba(20,20,20,0.4);
-  // background-color: black;
   opacity: 0.9;
   position: relative;
   color: white;
@@ -25,11 +24,8 @@
       opacity: 0.8;
     }
     .avatar-box {
-      border: 2px solid #cacab4;
-      border-radius: 50px;
-      img {
-        padding: 3px;
-      }
+      border: 2px solid white;
+      border-radius: 50%;
     }
   }
   .top-right {
@@ -78,18 +74,10 @@
       margin: 0px 10px;
       color: white;
     }
-    .big-i {
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
+    .big {
+      color: white;
+      font-size: 4.1rem;
       border-radius: 50%;
-      background-color: white;
-      i {
-        color: black;
-        font-size: 58px;
-      }
     }
   }
 }
