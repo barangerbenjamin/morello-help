@@ -6,7 +6,8 @@ const init_flatpickr = () => {
     disableMobile: "true",
     enableTime: true,
     minDate: "today",
-    maxDate: new Date().fp_incr(14)
+    maxDate: new Date().fp_incr(14),
+    time_24hr: true
   });
 }
 
