@@ -32,3 +32,6 @@ need4 = Need.create(user: becca, category: "Groceries", end_time: DateTime.now +
 need5 = Need.create(user: alex, category: "Service", end_time: DateTime.now + 2.day, name: "Sit my dog", quantity: 0, note: "Sit my dog whilst I'm saving lives!")
 
 puts "Needs created!"
+
+puts "Creating services..."
+service1 = Service.create(need: need3, user: ben)
