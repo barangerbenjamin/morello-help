@@ -14,7 +14,7 @@
                   <% end %>
                 </div>
                 <div class="top-left-info ml-3">
-                  <p class="top-left-section">PIANO DAILY</p>
+                  <p class="top-left-section"><%= need.category.upcase %></p>
                   <p class="top-left-date"><%= need.created_at.to_date == Date.today ? "Today" : need.created_at.strftime("%A, %b %d") %></p>
                 </div>
               </div>
