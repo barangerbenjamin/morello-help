@@ -1,7 +1,7 @@
 class NeedsController < ApplicationController
     before_action :set_need, only: [:show, :update_view_count]
     def index
-      @needs = Need.all
+      @needs = Need.all.select(&:end_time_in_future?).sort_by(&:end_time)
     end
 
     def show
