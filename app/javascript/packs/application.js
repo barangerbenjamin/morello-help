@@ -23,3 +23,9 @@ console.log('Hello World from Webpacker')
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import "bootstrap";
+import { init_flatpickr } from './components/init_flatpickr';
+
+const needForm = document.getElementById("new_need");
+if (needForm) {
+  init_flatpickr();
+}

@@ -4,7 +4,7 @@
 			<%= simple_form_for @need do |f| %>
 				<%= f.input :name, placeholder: "Eggs" %>
 				<%= f.input :quantity %>
-        <%= f.input :end_time %>
+        <%= f.input :end_time, as: :string, input_html: { class: "flatpickr" } %>
         <%= f.input :category, collection: ["Groceries", "Service"] %>
 				<%= f.input :note, as: :text, placeholder: "Only free range", input_html: { rows: 3 } %>
 				<%= f.submit "Create need" %>
