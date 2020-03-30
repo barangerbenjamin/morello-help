@@ -3,6 +3,9 @@
   opacity: 0.9;
   border-radius: 20px;
   color: white;
+  label {
+    font-size: 0.7rem;
+  }
   input, select {
     background-color: transparent !important;
   }
