@@ -2,7 +2,7 @@
   height: 40vh;
   border-radius: 20px;
   box-shadow: 0 8px 2px -2px rgba(20,20,20,0.4);
-  background-color: black;
+  // background-color: black;
   opacity: 0.9;
   position: relative;
   color: white;
@@ -22,7 +22,7 @@
       font-weight: bolder;
     }
     .top-left-date {
-      opacity: 0.6;
+      opacity: 0.8;
     }
     .avatar-box {
       border: 2px solid #cacab4;
@@ -37,7 +37,7 @@
       text-decoration: none;
       color: black;
     }
-    background-color: #cacab4;
+    background-color: white;
     border-radius: 50%;
     i {
       padding: 8px;
@@ -48,12 +48,18 @@
       font-weight: bolder;
     }
     .middle-infos {
+      #separator {
+        margin: 0 !important;
+      }
+      .right-i {
+        margin-left: 0 !important;
+      }
       i {
-        margin: 0px 5px;
+        margin: 0 5px;
       }
       p {
         margin: 0px 5px;
-        opacity: 0.6;
+        opacity: 0.8;
         font-size: 12px;
       }
     }
