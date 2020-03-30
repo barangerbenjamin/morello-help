@@ -4,7 +4,9 @@ class NeedsController < ApplicationController
       @needs = Need.all
     end
 
-    def show; end
+    def show
+      @service = Service.new
+    end
 
     def new
       @need = Need.new
@@ -24,7 +26,7 @@ class NeedsController < ApplicationController
         render :new
       end
     end
-    
+
     private
 
     def set_need
@@ -32,7 +34,7 @@ class NeedsController < ApplicationController
     end
 
     def need_params
-      params.require(:need).permit(:name, :note, :quantity, :category) 
+      params.require(:need).permit(:name, :note, :quantity, :category)
     end
-    
+
 end
