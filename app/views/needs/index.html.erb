@@ -44,7 +44,11 @@
             <div class="card-new-bottom text-center d-flex align-items-center">
                 <i class="fas fa-thumbs-up"></i>
                 <div class="big-i">
-                  <i class="fas fa-trophy big"></i>
+                  <% if need.user.photo.attached? %>
+                    <%#= cl_image_tag need.user.photo.key, class: "avatar-big" %>
+                    <i class="fas fa-user-circle"></i>
+                  <% else %>
+                  <% end %>
                 </div>
                 <i class="fas fa-thumbs-down"></i>
             </div>
