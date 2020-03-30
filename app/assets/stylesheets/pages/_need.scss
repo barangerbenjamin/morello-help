@@ -1,0 +1,30 @@
+.need-form {
+  background-color: black;
+  opacity: 0.9;
+  border-radius: 20px;
+  color: white;
+  input, select {
+    background-color: transparent !important;
+  }
+  select option {
+    color: black !important;
+  }
+  ::placeholder {
+    color: white;
+    opacity: 0.8;
+  }
+  :-ms-input-placeholder {
+    color: white;
+    opacity: 0.8;
+  }
+
+  ::-ms-input-placeholder {
+    color: white;
+    opacity: 0.8;
+  }
+}
+
+.need-form-input {
+  background-color: transparent !important;
+  color: white !important;
+}

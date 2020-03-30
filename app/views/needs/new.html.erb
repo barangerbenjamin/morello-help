@@ -1,13 +1,13 @@
 <div class="container">
   <div class="row">
-		<div class="col-12">
-			<%= simple_form_for @need do |f| %>
-				<%= f.input :name, placeholder: "Eggs" %>
-				<%= f.input :quantity %>
-        <%= f.input :end_time, as: :string, input_html: { class: "flatpickr" } %>
-        <%= f.input :category, collection: ["Groceries", "Service"] %>
-				<%= f.input :note, as: :text, placeholder: "Only free range", input_html: { rows: 3 } %>
-				<%= f.submit "Create need" %>
+		<div class="col-10 offset-1">
+			<%= simple_form_for @need, html: { class: "mt-3 p-3 need-form" } do |f| %>
+				<%= f.input :name, placeholder: "Eggs", input_html: { class: "need-form-input", style: "color: #fff" } %>
+				<%= f.input :quantity, input_html: { class: "need-form-input", style: "color: #fff" } %>
+        <%= f.input :end_time, as: :string, input_html: { class: "flatpickr need-form-input", style: "color: #fff" } %>
+        <%= f.input :category, collection: ["Groceries", "Service"], input_html: { class: "need-form-input", style: "color: #fff" } %>
+				<%= f.input :note, as: :text, placeholder: "Only free range", input_html: { rows: 3, style: "color: #fff", class: "need-form-input" } %>
+				<%= f.submit "Create need", class: "need-form-input" %>
 			<% end %>
 		</div>
 	</div>

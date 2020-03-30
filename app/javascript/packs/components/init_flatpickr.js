@@ -1,5 +1,5 @@
 import flatpickr from "flatpickr"
-import 'flatpickr/dist/flatpickr.min.css'
+import 'flatpickr/dist/themes/dark.css'
 
 const init_flatpickr = () => {
   flatpickr(".flatpickr", {
