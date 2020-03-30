@@ -1,5 +1,6 @@
 <%= @need.name %>
 <%= @need.note %>
-
-<%= render "services/form" %>
+<% if @need.services.empty? %>
+  <%= render "services/form" %>
+<% end %>
 
