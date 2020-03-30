@@ -27,7 +27,7 @@
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
           <%= f.input :flat_number %>
-          <%= f.input :complex, collection: [ "Amarelle", "Maraschino", "Rainier", "Santina" ] %>
+          <%= f.input :complex, collection: [ "Amarelle", "Maraschino", "Rainier", "Santina" ], default: "Amarelle" %>
           <%= f.input :photo, as: :file %>
         </div>
 
