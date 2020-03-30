@@ -1,35 +1,39 @@
 .need-form {
-  background-color: black;
+  // background-color: white;
   opacity: 0.9;
-  border-radius: 20px;
-  color: white;
+  // border-radius: 20px;
+  // color: black;
   label {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
+    font-weight: bolder;
   }
-  input, select {
+  input, select, textarea {
     background-color: transparent !important;
+    border-radius: 5px;
   }
   select option {
-    color: black !important;
+    color: white !important;
   }
   ::placeholder {
-    color: white;
+    // color: black;
     opacity: 0.8;
   }
   :-ms-input-placeholder {
-    color: white;
+    // color: black;
     opacity: 0.8;
+    font-weight: bolder;
   }
 
   ::-ms-input-placeholder {
-    color: white;
+    // color: black;
     opacity: 0.8;
+    font-weight: bolder;
   }
 }
 
 .need-form-input {
   background-color: transparent !important;
-  color: white !important;
+  color: black !important;
 }
 
 .center-form {
