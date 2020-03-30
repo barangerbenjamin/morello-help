@@ -6,6 +6,15 @@
   opacity: 0.9;
   position: relative;
   color: white;
+  .need-plus {
+    background-color: white;
+    border-radius: 50%;
+    i {
+      padding: 30px;
+      color: black;
+      font-size: 30px;
+    }
+  }
   .top-left {
     p {
       margin: 0;
