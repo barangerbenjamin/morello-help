@@ -30,7 +30,9 @@
               </div>
             </div>
             <div class="card-new-middle text-center mt-3">
-              <h3><%= need.name %></h3>
+              <%= link_to update_view_count_need_path(need), method: :patch, class: "link-title-need" do %>
+                <h3><%= need.name %></h3>
+              <% end %>
               <div class="middle-infos d-flex justify-content-around mt-3">
                 <div></div>
                 <div class="d-flex">
