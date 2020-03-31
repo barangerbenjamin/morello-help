@@ -3,39 +3,24 @@
   label {
     font-size: 0.8rem;
     font-weight: bolder;
+    opacity: 0.8;
   }
   input, textarea {
     border-top: 0;
     border-right: 0;
     outline: none !important;
     border-left: 0;
-  }
-  input, select, textarea {
-    background-color: transparent !important;
-    // border-radius: 5px;
+    color: black;
+    font-weight: bolder;
   }
   .form-control:focus {
     box-shadow: none;
     outline: none;
     border-color: #ced4da;
+    color: black;
   }
   select option {
     color: black !important;
-  }
-  ::placeholder {
-    // color: black;
-    opacity: 0.8;
-  }
-  :-ms-input-placeholder {
-    // color: black;
-    opacity: 0.8;
-    font-weight: bolder;
-  }
-
-  ::-ms-input-placeholder {
-    // color: black;
-    opacity: 0.8;
-    font-weight: bolder;
   }
 }
 
