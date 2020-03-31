@@ -24,10 +24,17 @@ console.log('Hello World from Webpacker')
 // ----------------------------------------------------
 import "bootstrap";
 import { init_flatpickr } from './components/init_flatpickr';
-import "controllers"
+import "controllers";
 
 
 const needForm = document.getElementById("new_need");
 if (needForm) {
   init_flatpickr();
+}
+
+const alert = document.querySelector(".alert");
+if (alert) {
+  setTimeout(() => {
+    $(".alert").fadeOut()
+  }, 5000);
 }
