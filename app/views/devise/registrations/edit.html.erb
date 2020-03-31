@@ -15,6 +15,7 @@
                       hint: "LEAVE IT BLANK IF YOU DON'T WANT TO CHANGE IT",
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :flat_number, label: "FLAT NUMBER" %>
           <%= f.input :password_confirmation,
                       label: "CONFIRM PASSWORD",
                       required: false,
@@ -24,7 +25,6 @@
                       hint: "WE NEED YOUR CURRENT PASSWORD TO CONFIRM YOUR CHANGES",
                       required: true,
                       input_html: { autocomplete: "current-password" } %>
-          <%= f.input :flat_number, label: "FLAT NUMBER" %>
           <%= f.input :complex, label: "COMPLEX NAME", collection: [ "Amarelle", "Maraschino", "Rainier", "Santina" ], default: "Amarelle" %>
           <%= f.input :photo, label: "PHOTO", as: :file %>
         </div>

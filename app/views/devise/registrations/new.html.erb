@@ -15,7 +15,6 @@
           <%= f.input :first_name, label: "FIRST NAME" %>
           <%= f.input :last_name, label: "LAST NAME" %>
           <%= f.input :flat_number, label: "FLAT NUMBER" %>
-          <%= f.input :complex, label: "COMPLEX NAME", collection: [ "Amarelle", "Maraschino", "Rainier", "Santina" ], default: "Amarelle" %>
           <%= f.input :password,
                       label: "PASSWORD",
                       required: true,
@@ -25,6 +24,7 @@
                       label: "CONFIRM PASSWORD",
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :complex, label: "COMPLEX NAME", collection: [ "Amarelle", "Maraschino", "Rainier", "Santina" ], default: "Amarelle" %>
           <%= f.input :photo, label: "PHOTO", as: :file %>
         </div>
 
