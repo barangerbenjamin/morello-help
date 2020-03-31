@@ -29,8 +29,9 @@
           <%= f.input :photo, label: "PHOTO", as: :file %>
         </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "UPDATE" %>
+        <div class="submit-line mt-2" data-controller="form">
+          <%= f.button :submit, "UPDATE", data: { target: "form.submitLink" }, class: "p-0" %>
+          <span class="fas fa-arrow-right" data-action="click->form#clickSubmit"></span>
         </div>
       <% end %>
 
