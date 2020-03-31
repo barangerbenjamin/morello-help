@@ -34,7 +34,8 @@
 }
 
 .center-form {
-  min-height: calc(100vh - 55px);
+  min-height: calc(100vh - 42px);
+  position: relative;
 }
 
 .submit-line {
@@ -52,4 +53,9 @@
     border-radius: 50%;
     cursor: pointer;
   }
+}
+
+.svg-wave {
+  position: absolute;
+  bottom: 0;
 }

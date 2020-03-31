@@ -8,14 +8,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "I WANT TO HELP", needs_path, class: "nav-link navbar-white" %>
+        <%= link_to "I WANT TO HELP", needs_path, class: "nav-link navbar-white font-weight-bolder" %>
       </li>
       <li class="nav-item">
-        <%= link_to "I NEED HELP", new_need_path, class: "nav-link navbar-white" %>
+        <%= link_to "I NEED HELP", new_need_path, class: "nav-link navbar-white font-weight-bolder" %>
       </li>
       <li>
         <% if current_user %>
-          <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "nav-link navbar-white" %>
+          <%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class: "nav-link font-weight-bolder navbar-white" %>
         <% else %>
           <%= link_to "LOG IN", new_user_session_path, class: "nav-link navbar-white" %>
         <% end %>
