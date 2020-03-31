@@ -11,19 +11,8 @@
   width: 40px;
 }
 
-.home-page {
-  position: relative;
-}
-
-.home-svg {
-  position: absolute;
-  bottom: 0;
-  h1 {
-    font-size: 2em;
-  }
-  img {
-    width: 100%;
-  }
+.home-info {
+  margin-top: -3rem !important;  
 }
 
 .btn-morello {
@@ -35,16 +24,8 @@
   border-radius: 5px;
 }
 
-#list-home {
-  list-style: none;
-  margin-bottom: 3rem;
-  margin-top: 1rem;
-  padding: 0;
-  height: calc(100vh - 55px);
-}
-
 .svg-home-list {
-  width: 5rem;
+  width: 4rem;
 }
 
 .navbar {
