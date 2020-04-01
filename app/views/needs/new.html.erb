@@ -2,7 +2,7 @@
   <div class="row center-form align-items-center">
 		<div class="col-10 offset-1 col-md-6 offset-md-3">
 			<%= simple_form_for @need, html: { class: "mt-3 mb-3 p-3 need-form" } do |f| %>
-				<%= f.input :name, label: "CHOOSE A TITLE", hint: "max. 20 characters", placeholder: "Eggs", input_html: { class: "need-form-input" } %>
+				<%= f.input :name, label: "CHOOSE A TITLE", hint: "MAX. 20 CHARACTERS", placeholder: "Eggs", input_html: { class: "need-form-input" } %>
 				<%= f.input :quantity, label: "HOW MUCH DO YOU NEED", hint: "LEAVE BLANK IF NOT APPLYING", input_html: { class: "need-form-input" } %>
         <%= f.input :end_time, label: "CHOOSE UP TO 14 DAYS VALIDITY", placeholder: "Select date", as: :string, input_html: { class: "flatpickr need-form-input" } %>
         <%= f.input :category, label: "WHICH CATEGORY", collection: ["Groceries", "Service"], default: "Groceries", input_html: { class: "need-form-input" } %>
