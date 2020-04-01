@@ -1,6 +1,6 @@
 <% if @need.services.empty? %>
   <div class="container">
-    <div class="row">
+    <div class="row center-form align-items-center">
       <div class="col-10 offset-1 col-md-6 offset-md-3 text-center font-weight-bolder">
         <% if @need.user.photo.attached? %>
           <%= cl_image_tag @need.user.photo.key, class: "avatar-big avatar-show" %>
@@ -9,12 +9,12 @@
         <% end %>
         <h4 class="font-weight-bolder mt-2"><%= @need.name.upcase %></h4>
 
-        <p><%= @need.user.first_name.upcase %> NEED YOUR HELP!</p>
+        <p><%= @need.user.first_name.upcase %> NEEDS YOUR HELP!</p>
         <p>HERE IS A LITTLE DESCRIPTION:</p>
-        <p><em><%= @need.note %><em></p>
+        <p><em><%= @need.note %></em></p>
 
-        <p>REMAINING TIME: <%= distance_of_time_in_words(DateTime.now, @need.end_time) %><p>
-        <p>IF YOU THINK YOU CAN HELP, CLICK ON THE LINK BELOW</p>
+        <p>REMAINING TIME: <%= distance_of_time_in_words(DateTime.now, @need.end_time).upcase %><p>
+        <p>IF YOU THINK YOU CAN HELP, CLICK ON THE ICON BELOW</p>
 
         <%= render "services/form" %>
       </div>

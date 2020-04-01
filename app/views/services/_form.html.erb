@@ -1,6 +1,6 @@
 <%= simple_form_for [@need, @service] do |f| %>
-  <div class="submit-line mt-2" data-controller="form">
-    <%= f.button :submit, "HELP OUT", data: { target: "form.submitLink" }, class: "p-0" %>
+  <div class="submit-line mt-2 justify-content-around" data-controller="form">
+    <%= f.button :submit, "HELP OUT", data: { target: "form.submitLink" }, class: "p-0 d-none" %>
     <span class="fas fa-hands-helping" data-action="click->form#clickSubmit"></span>
   </div>
   <%# <button class="border-0" type="submit" name="commit" value="Create Service" data-disable-with="Create Service">
