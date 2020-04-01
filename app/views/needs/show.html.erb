@@ -20,15 +20,18 @@
       <% if @need.services.empty? %>
         <p>REMAINING TIME: <%= distance_of_time_in_words(DateTime.now, @need.end_time).upcase %><p>
         <p>IF YOU THINK YOU CAN HELP, CLICK ON THE ICON BELOW</p>
-      <% else %>
-        <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
-        <p>FILL THIS SMALL FORM WHEN YOU'RE DONE<p>
-      <% end %>
-      
-      
-      <% if @need.services.empty? %>
         <%= render "services/form" %>
+      <% elsif @need.services.first.status == "helped" %>
+        <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
+        <p>WE HAVE NOTIFIED <%= @need.user.first_name.upcase %> SO SHE CAN REIMBURSE YOU ASAP!</p>
+        <p class="mt-2">HAVE A LOVELY DAY</p>
+      <% elsif @need.services.first.status == "done" %>
+        <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
+        <p><%= @need.user.first_name.upcase %> HAS REIMBURSED YOU</p>
+        <p class="mt-2">HAVE A LOVELY DAY</p>
       <% else %>
+        <p>THANK YOU FOR PLEDGING TO HELP <%= @need.user.first_name.upcase %><p>
+        <p>FILL THIS SMALL FORM WHEN YOU'RE DONE<p>
         <%= simple_form_for @need.services.first, html: { class: "text-left need-form" } do |f| %>
           <%= f.input :price, label: "AMOUNT", hint: "HOW MUCH DID IT COST YOU?" %>
           <%= f.input :receit, as: :file, label: "RECEIT", hint: "UPLOAD A PICTURE OF YOUR RECEIT" %>
@@ -38,6 +41,7 @@
           </div>
         <% end %>
       <% end %>
+
       
 
       
