@@ -33,8 +33,8 @@
           <%= f.input :price, label: "AMOUNT", hint: "HOW MUCH DID IT COST YOU?" %>
           <%= f.input :receit, as: :file, label: "RECEIT", hint: "UPLOAD A PICTURE OF YOUR RECEIT" %>
           <div class="submit-line mt-2 justify-content-around" data-controller="form">
-            <%= f.button :submit, "HELP OUT", data: { target: "form.submitLink" }, class: "p-0 d-none" %>
-            <span class="fas fa-arrow-right" data-action="click->form#clickSubmit"></span>
+            <%= f.button :submit, "HELP OUT", data: { target: "form.submitLink", needuser: @need.user.first_name }, class: "p-0 d-none" %>
+            <span class="fas fa-arrow-right" data-action="click->form#confirm"></span>
           </div>
         <% end %>
       <% end %>

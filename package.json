@@ -7,7 +7,8 @@
     "flatpickr": "^4.6.3",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.1",
-    "stimulus": "^1.1.1"
+    "stimulus": "^1.1.1",
+    "sweetalert2": "^9.10.8"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.10.3"
