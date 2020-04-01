@@ -14,7 +14,6 @@
           <p>FROM THE <%= @need.user.complex.upcase %> COMPLEX</p>
           <p>FLAT <%= @need.user.flat_number %></p>
       <% end %>
-      
       <p>HERE IS A LITTLE DESCRIPTION:</p>
       <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
       <% if @need.services.empty? %>
@@ -41,10 +40,6 @@
           </div>
         <% end %>
       <% end %>
-
-      
-
-      
     </div>
   </div>
 </div>
