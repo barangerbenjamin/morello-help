@@ -11,6 +11,7 @@ class ServicesController < ApplicationController
 
   def update
     @service = Service.find(params[:id])
+    @service.status = "helped"
     @service.update(service_params)
     redirect_to need_path(@service.need)
   end
