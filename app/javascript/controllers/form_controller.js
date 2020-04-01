@@ -11,7 +11,7 @@ export default class extends Controller {
   confirm(event) {
     Swal.fire({
       title: `<p class="text-dark font-weight-bolder">All done?</p>`,
-      html: `<p class="text-dark font-weight-bolder">You're about to confirme that you have helped ${this.submitLinkTarget.dataset.needuser}</p>`,
+      html: `<p class="text-dark font-weight-bolder">You're about to confirm that you have helped ${this.submitLinkTarget.dataset.needuser}</p>`,
       type: 'warning',
       footer: `<p class="text-dark font-weight-bolder">You're the boss <i class="fas fa-crown""></i></p>`,
       confirmButtonColor: '#1A1A1A',
