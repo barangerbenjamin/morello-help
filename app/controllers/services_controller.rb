@@ -9,8 +9,16 @@ class ServicesController < ApplicationController
     end
   end
 
+  def update
+    @service = Service.find(params[:id])
+    @service.update(service_params)
+    redirect_to need_path(@service.need)
+  end
+  
+
   private
 
   def service_params
+    params.require(:service).permit(:receit)
   end
 end

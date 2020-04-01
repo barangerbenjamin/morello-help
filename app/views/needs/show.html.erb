@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row center-form align-items-center">
-    <div class="col-10 offset-1 col-md-6 offset-md-3 text-center font-weight-bolder">
+    <div class="col-10 offset-1 col-md-6 offset-md-3 text-center font-weight-bolder mt-3 mb-3">
       <% if @need.user.photo.attached? %>
         <%= cl_image_tag @need.user.photo.key, class: "avatar-big avatar-show" %>
       <% else %>
@@ -16,7 +16,7 @@
       <% end %>
       
       <p>HERE IS A LITTLE DESCRIPTION:</p>
-      <p><em><%= @need.note %></em></p>
+      <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
       <% if @need.services.empty? %>
         <p>REMAINING TIME: <%= distance_of_time_in_words(DateTime.now, @need.end_time).upcase %><p>
         <p>IF YOU THINK YOU CAN HELP, CLICK ON THE ICON BELOW</p>
@@ -29,7 +29,13 @@
       <% if @need.services.empty? %>
         <%= render "services/form" %>
       <% else %>
-        
+        <%= simple_form_for @need.services.first, html: { class: "text-left" } do |f| %>
+          <%= f.input :receit, as: :file, label: "RECEIT", hint: "UPLOAD A PICTURE OF YOUR RECEIT" %>
+          <div class="submit-line mt-2 justify-content-around" data-controller="form">
+            <%= f.button :submit, "HELP OUT", data: { target: "form.submitLink" }, class: "p-0 d-none" %>
+            <span class="fas fa-arrow-right" data-action="click->form#clickSubmit"></span>
+          </div>
+        <% end %>
       <% end %>
       
 
