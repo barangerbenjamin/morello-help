@@ -62,3 +62,12 @@
   position: absolute;
   bottom: 0;
 }
+
+.show-links {
+  text-decoration: underline;
+  color: black;
+  font-size: 0.7rem;
+  &:hover {
+    color: black;
+  }
+}
