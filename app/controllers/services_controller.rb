@@ -11,14 +11,14 @@ class ServicesController < ApplicationController
   end
 
   def update
-    @service = Service.find(params[:id])
     @service.status = "helped"
     @service.update(service_params)
     redirect_to need_path(@service.need)
   end
 
   def confirm_reimbursement
-    
+    @service.update(status: "done")
+    redirect_to need_path(@service.need)
   end
   
   

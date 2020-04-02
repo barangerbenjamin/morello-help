@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     patch 'update_view_count', on: :member
     resources :services, only: [:create]
   end
-  resources :services, only: [:destroy, :update]
+  resources :services, only: [:destroy, :update] do
+    patch 'confirm_reimbursement', on: :member
+  end
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
