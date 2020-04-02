@@ -1,4 +1,5 @@
 class ServicesController < ApplicationController
+  before_action :set_service, only: [ :update, :confirm_reimbursement ]
   def create
     @need = Need.find(params[:need_id])
     @service = @need.services.build(user: current_user)
@@ -15,9 +16,19 @@ class ServicesController < ApplicationController
     @service.update(service_params)
     redirect_to need_path(@service.need)
   end
+
+  def confirm_reimbursement
+    
+  end
+  
   
 
   private
+
+  def set_service
+    @service = Service.find(params[:id])
+  end
+  
 
   def service_params
     params.require(:service).permit(:price, :receipt)
