@@ -11,7 +11,6 @@ class ServicesController < ApplicationController
   end
 
   def update
-    binding.pry
     @service.status = params[:service][:price].to_i > 0 ? "reimbursement" : "done"
     @service.update(service_params)
     redirect_to need_path(@service.need)
