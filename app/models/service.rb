@@ -1,4 +1,5 @@
 class Service < ApplicationRecord
+  attr_accessor :reimburse
   belongs_to :user
   belongs_to :need
   has_one_attached :receipt
