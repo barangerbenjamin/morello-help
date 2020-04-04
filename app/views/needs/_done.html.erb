@@ -24,4 +24,15 @@
     <%= link_to "I NEED HELP", new_need_path, class: "show-links" %>
     <%= link_to "I WANT TO HELP MORE", needs_path, class: "show-links" %>
   </div>
+<% else %>
+  <% if @service.user.photo.attached? %>
+    <%= cl_image_tag @service.user.photo.key, class: "avatar-big avatar-show" %>
+  <% else %>
+    <i class="i-show fas fa-user-circle"></i>
+  <% end %>
+  <p><%= @helper.first_name %> HAS ALREADY HELPED <%= @owner.first_name %></p>
+  <div class="d-flex align-items-center justify-content-between">
+    <%= link_to "I NEED HELP", new_need_path, class: "show-links" %>
+    <%= link_to "I WANT TO HELP MORE", needs_path, class: "show-links" %>
+  </div>
 <% end %>

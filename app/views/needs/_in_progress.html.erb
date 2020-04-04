@@ -36,7 +36,7 @@
   <% else %>
     <i class="i-show fas fa-user-circle"></i>
   <% end %>
-  <p><%= @helper.first_name %> IS HELPING <%= @owner.first_name %></p>
+  <p><%= @helper.first_name %> IS ALREADY HELPING <%= @owner.first_name %></p>
   <div class="d-flex align-items-center justify-content-between">
     <%= link_to "I NEED HELP", new_need_path, class: "show-links" %>
     <%= link_to "I WANT TO HELP MORE", needs_path, class: "show-links" %>
