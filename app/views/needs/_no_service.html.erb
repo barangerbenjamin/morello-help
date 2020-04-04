@@ -1,0 +1,27 @@
+<% if @need.services.empty? && @owner != current_user %>
+  <p><%= @owner.first_name.upcase %> NEEDS YOUR HELP!</p>
+<% elsif @owner != current_user %>
+    <p>YOU ARE HELPING <%= @owner.first_name.upcase %></p>
+    <p>FROM THE <%= @owner.complex.upcase %> COMPLEX</p>
+    <p>FLAT <%= @owner.flat_number %></p>
+<% end %>
+
+<% if @need.user.photo.attached? %>
+  <%= cl_image_tag @need.user.photo.key, class: "avatar-big avatar-show" %>
+<% else %>
+  <i class="big fas fa-user-circle"></i>
+<% end %>
+  <h4 class="font-weight-bolder mt-2"><%= @need.name.upcase %></h4>
+<% if current_user == @owner %>
+  <p>HERE IS YOUR DESCRIPTION:</p>
+  <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
+  <p>AWAITING SOMEONE TO HELP YOU</p>
+<% else %>
+  <p>HERE IS A LITTLE DESCRIPTION:</p>
+  <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
+  <p>REMAINING TIME: <%= distance_of_time_in_words(DateTime.now, @need.end_time).upcase %><p>
+  <p>IF YOU THINK YOU CAN HELP, CLICK ON THE ICON BELOW</p>
+  <%= render "services/form" %>
+<% end %>
+
+

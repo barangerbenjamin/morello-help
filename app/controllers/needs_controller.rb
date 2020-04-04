@@ -5,8 +5,10 @@ class NeedsController < ApplicationController
     end
 
     def show
+      @owner = @need.user
       if @need.services.any?
         @service =  @need.services.first
+        @helper = @service.user
         @chatroom = @service.chatroom
       end
     end
