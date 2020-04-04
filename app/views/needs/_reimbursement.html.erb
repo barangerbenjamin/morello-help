@@ -1,0 +1,23 @@
+<% if @need.user.photo.attached? %>
+  <%= cl_image_tag @need.user.photo.key, class: "avatar-big avatar-show" %>
+<% else %>
+  <i class="big fas fa-user-circle"></i>
+<% end %>
+<h4 class="font-weight-bolder mt-2"><%= @need.name.upcase %></h4>
+<% if current_user == @owner %>
+  <p>HERE IS YOUR DESCRIPTION:</p>
+  <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
+  <p><%= @service.user.first_name.upcase %> HAS HELPED YOU.</p>
+  <p>THE COST WAS: <%= humanized_money_with_symbol(@service.price) %></p>
+  <p>PLEASE REIMBURSE AS SOON AS POSSIBLE</p>
+  <p>ALREADY DONE? CLICK BELOW</p>
+  <%= link_to "confirm", confirm_reimbursement_service_path(@service), method: :patch, class: "d-none" %>
+  <div class="submit-line mt-2 justify-content-around" data-controller="form">
+    <%= link_to "confirm", confirm_reimbursement_service_path(@service), method: :patch, class: "d-none p-0", data: { target: "form.submitLink", needuser: @service.user.first_name } %>
+    <span class="fas fa-hand-holding-usd" data-action="click->form#confirmMoney"></span>
+  </div>
+<% elsif current_user == @helper %>
+  <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
+  <p>WE HAVE NOTIFIED <%= @need.user.first_name.upcase %> SO SHE CAN REIMBURSE YOU ASAP!</p>
+  <p class="mt-2">HAVE A LOVELY DAY</p>
+<% end %>
