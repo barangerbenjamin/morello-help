@@ -15,6 +15,9 @@
   <p class="mt-2"><%= @service.user.first_name.upcase %> HAS PLEDGED TO HELP YOU</p>
   <p>CHECK YOUR MESSAGES TO SEE IF HE/SHE HAS BEEN IN TOUCH!</p>
 <% elsif current_user == @helper %>
+  <p>YOU ARE HELPING <%= @need.user.first_name.upcase %></p>
+  <p>FROM THE <%= @need.user.complex.upcase %> COMPLEX</p>
+  <p>FLAT <%= @need.user.flat_number %></p>
   <p>HERE IS A LITTLE DESCRIPTION:</p>
   <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
   <p>THANK YOU FOR PLEDGING TO HELP <%= @need.user.first_name.upcase %><p>

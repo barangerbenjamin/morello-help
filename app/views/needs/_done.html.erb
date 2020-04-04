@@ -1,0 +1,27 @@
+<% if @need.user.photo.attached? %>
+  <%= cl_image_tag @need.user.photo.key, class: "avatar-big avatar-show" %>
+<% else %>
+  <i class="big fas fa-user-circle"></i>
+<% end %>
+<h4 class="font-weight-bolder mt-2"><%= @need.name.upcase %></h4>
+<% if current_user == @owner %>
+  <p>HERE IS YOUR DESCRIPTION:</p>
+  <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
+  <p>THANK YOU FOR USING MORELLO HELP</p>
+  <div class="d-flex align-items-center justify-content-between">
+    <%= link_to "I NEED MORE HELP", new_need_path, class: "show-links" %>
+    <%= link_to "I WANT TO HELP", needs_path, class: "show-links" %>
+  </div>
+<% elsif current_user == @helper %>
+<p>YOU HAVE HELPED <%= @need.user.first_name.upcase %></p>
+  <p>FROM THE <%= @need.user.complex.upcase %> COMPLEX</p>
+  <p>FLAT <%= @need.user.flat_number %></p>
+  <p>HERE IS A LITTLE DESCRIPTION:</p>
+  <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
+  <p><%= @need.user.first_name.upcase %> HAS REIMBURSED YOU</p>
+  <p>HAVE A LOVELY DAY</p>
+  <div class="d-flex align-items-center justify-content-between">
+    <%= link_to "I NEED HELP", new_need_path, class: "show-links" %>
+    <%= link_to "I WANT TO HELP MORE", needs_path, class: "show-links" %>
+  </div>
+<% end %>
