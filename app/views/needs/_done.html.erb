@@ -1,9 +1,4 @@
-<% if @need.user.photo.attached? %>
-  <%= cl_image_tag @need.user.photo.key, class: "avatar-big avatar-show" %>
-<% else %>
-  <i class="big fas fa-user-circle"></i>
-<% end %>
-<h4 class="font-weight-bolder mt-2"><%= @need.name.upcase %></h4>
+<%= render "show_top" %>
 <% if current_user == @owner %>
   <p>HERE IS YOUR DESCRIPTION:</p>
   <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
