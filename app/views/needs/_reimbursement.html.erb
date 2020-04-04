@@ -25,4 +25,15 @@
   <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
   <p>WE HAVE NOTIFIED <%= @need.user.first_name.upcase %> SO YOU CAN BE REIMBURSED ASAP!</p>
   <p class="mt-2">HAVE A LOVELY DAY</p>
+<% else %>
+  <% if @service.user.photo.attached? %>
+    <%= cl_image_tag @service.user.photo.key, class: "avatar-big avatar-show" %>
+  <% else %>
+    <i class="i-show fas fa-user-circle"></i>
+  <% end %>
+  <p><%= @helper.first_name %> IS HELPING <%= @owner.first_name %></p>
+  <div class="d-flex align-items-center justify-content-between">
+    <%= link_to "I NEED HELP", new_need_path, class: "show-links" %>
+    <%= link_to "I WANT TO HELP MORE", needs_path, class: "show-links" %>
+  </div>
 <% end %>
