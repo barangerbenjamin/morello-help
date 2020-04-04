@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
+    <% colors = ["black", "#9E4B05", "#D09624", "#82B4AB"] %>
     <% if @needs.any? %>
-      <% colors = ["black", "#9E4B05", "#D09624", "#82B4AB"] %>
       <% counter = 0 %>
       <% @needs.each do |need| %>
         <% counter = 0 if counter > colors.size - 1 %>
