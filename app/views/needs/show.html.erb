@@ -5,10 +5,13 @@
         <%= render "no_service" %>
       <% elsif @service.in_progress? %>
         <%= render "in_progress" %>
+        <%= render "chatroom_show" if current_user == @owner || current_user == @helper %>
       <% elsif @service.reimbursement? %>
         <%= render "reimbursement" %>
+        <%= render "chatroom_show" if current_user == @owner || current_user == @helper %>
       <% elsif @service.done? %>
         <%= render "done" %>
+        <%= render "chatroom_show" if current_user == @owner || current_user == @helper %>
       <% end %>
     </div>
   </div>
