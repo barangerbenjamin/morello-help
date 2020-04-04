@@ -5,7 +5,10 @@ class NeedsController < ApplicationController
     end
 
     def show
-      @service =  @need.services.first if @need.services.any?
+      if @need.services.any?
+        @service =  @need.services.first
+        @chatroom = @service.chatroom
+      end
     end
 
     def new

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :services, only: [:destroy, :update] do
     patch 'confirm_reimbursement', on: :member
   end
+  resources :chatrooms, only: [] do
+    resources :messages, only: :create
+  end
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
