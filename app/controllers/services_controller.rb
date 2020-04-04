@@ -4,6 +4,7 @@ class ServicesController < ApplicationController
     @need = Need.find(params[:need_id])
     @service = @need.services.build(user: current_user)
     if @service.save
+      Chatroom.create(service: @service)
       redirect_to need_path(@need), notice: "You are helping #{@need.user.full_name} out!"
     else
       render "form", error: "You cant do this at the moment!"
