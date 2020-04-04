@@ -26,35 +26,35 @@
         <p>REMAINING TIME: <%= distance_of_time_in_words(DateTime.now, @need.end_time).upcase %><p>
         <p>IF YOU THINK YOU CAN HELP, CLICK ON THE ICON BELOW</p>
         <%= render "services/form" %>
-      <% elsif @need.services.first.status == "in progress" && current_user == @need.user %>
+      <% elsif @service.status == "in progress" && current_user == @need.user %>
         <% if @need.user.photo.attached? %>
-          <%= cl_image_tag @need.services.first.user.photo.key, class: "avatar-big avatar-show" %>
+          <%= cl_image_tag @service.user.photo.key, class: "avatar-big avatar-show" %>
         <% else %>
           <i class="i-show fas fa-user-circle"></i>
         <% end %>
-        <p class="mt-2"><%= @need.services.first.user.first_name.upcase %> HAS PLEDGED TO HELP YOU</p>
+        <p class="mt-2"><%= @service.user.first_name.upcase %> HAS PLEDGED TO HELP YOU</p>
         <p>CHECK YOUR MESSAGES TO SEE IF HE/SHE HAS BEEN IN TOUCH!</p> <! –– TODO, link to messages ––>
-      <% elsif @need.services.first.status == "reimbursement" && @need.user == current_user %>
-        <p><%= @need.services.first.user.first_name.upcase %> HAS HELPED YOU.</p>
-        <p>THE COST WAS: <%= humanized_money_with_symbol(@need.services.first.price) %></p>
+      <% elsif @service.status == "reimbursement" && @need.user == current_user %>
+        <p><%= @service.user.first_name.upcase %> HAS HELPED YOU.</p>
+        <p>THE COST WAS: <%= humanized_money_with_symbol(@service.price) %></p>
         <p>PLEASE REIMBURSE AS SOON AS POSSIBLE</p>
         <p>ALREADY DONE? CLICK BELOW</p>
-        <%= link_to "confirm", confirm_reimbursement_service_path(@need.services.first), method: :patch, class: "d-none" %>
+        <%= link_to "confirm", confirm_reimbursement_service_path(@service), method: :patch, class: "d-none" %>
         <div class="submit-line mt-2 justify-content-around" data-controller="form">
-            <%= link_to "confirm", confirm_reimbursement_service_path(@need.services.first), method: :patch, class: "d-none p-0", data: { target: "form.submitLink", needuser: @need.services.first.user.first_name } %>
+            <%= link_to "confirm", confirm_reimbursement_service_path(@service), method: :patch, class: "d-none p-0", data: { target: "form.submitLink", needuser: @service.user.first_name } %>
             <span class="fas fa-hand-holding-usd" data-action="click->form#confirmMoney"></span>
           </div>
-      <% elsif @need.services.first.status == "reimbursement" %>
+      <% elsif @service.status == "reimbursement" %>
         <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
         <p>WE HAVE NOTIFIED <%= @need.user.first_name.upcase %> SO SHE CAN REIMBURSE YOU ASAP!</p>
         <p class="mt-2">HAVE A LOVELY DAY</p>
-      <% elsif @need.services.first.status == "done" && @need.user == current_user %>
+      <% elsif @service.status == "done" && @need.user == current_user %>
         <p>THANK YOU FOR USING MORELLO HELP</p>
         <div class="d-flex align-items-center justify-content-between">
           <%= link_to "I NEED MORE HELP", new_need_path, class: "show-links" %>
           <%= link_to "I WANT TO HELP", needs_path, class: "show-links" %>
         </div>
-      <% elsif @need.services.first.status == "done" %>
+      <% elsif @service.status == "done" %>
         <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
         <p><%= @need.user.first_name.upcase %> HAS REIMBURSED YOU</p>
         <p>HAVE A LOVELY DAY</p>
@@ -65,7 +65,7 @@
       <% else %>
         <p>THANK YOU FOR PLEDGING TO HELP <%= @need.user.first_name.upcase %><p>
         <p>FILL THIS SMALL FORM WHEN YOU'RE DONE<p>
-        <%= simple_form_for @need.services.first, html: { class: "text-left need-form" } do |f| %>
+        <%= simple_form_for @service, html: { class: "text-left need-form" } do |f| %>
           <%= f.input :price, label: "AMOUNT", hint: "HOW MUCH DID IT COST YOU?" %>
           <%= f.input :receipt, as: :file, label: "RECEIPT", hint: "UPLOAD A PICTURE OF YOUR RECEIT" %>
           <div class="submit-line mt-2 justify-content-around" data-controller="form">

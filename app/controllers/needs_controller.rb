@@ -5,7 +5,7 @@ class NeedsController < ApplicationController
     end
 
     def show
-      @service = Service.new
+      @service =  @need.services.first if @need.services.any?
     end
 
     def new
