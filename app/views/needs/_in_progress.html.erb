@@ -1,0 +1,30 @@
+<% if @need.user.photo.attached? %>
+  <%= cl_image_tag @need.user.photo.key, class: "avatar-big avatar-show" %>
+<% else %>
+  <i class="big fas fa-user-circle"></i>
+<% end %>
+  <h4 class="font-weight-bolder mt-2"><%= @need.name.upcase %></h4>
+<% if current_user == @owner %>
+  <p>HERE IS YOUR DESCRIPTION:</p>
+  <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
+  <% if @service.user.photo.attached? %>
+    <%= cl_image_tag @service.user.photo.key, class: "avatar-big avatar-show" %>
+  <% else %>
+    <i class="i-show fas fa-user-circle"></i>
+  <% end %>
+  <p class="mt-2"><%= @service.user.first_name.upcase %> HAS PLEDGED TO HELP YOU</p>
+  <p>CHECK YOUR MESSAGES TO SEE IF HE/SHE HAS BEEN IN TOUCH!</p>
+<% else %>
+  <p>HERE IS A LITTLE DESCRIPTION:</p>
+  <p class="font-weight-normal text-muted"><em><%= @need.note %></em></p>
+  <p>THANK YOU FOR PLEDGING TO HELP <%= @need.user.first_name.upcase %><p>
+  <p>FILL THIS SMALL FORM WHEN YOU'RE DONE<p>
+  <%= simple_form_for @service, html: { class: "text-left need-form" } do |f| %>
+    <%= f.input :price, label: "AMOUNT", hint: "HOW MUCH DID IT COST YOU?" %>
+    <%= f.input :receipt, as: :file, label: "RECEIPT", hint: "UPLOAD A PICTURE OF YOUR RECEIT" %>
+    <div class="submit-line mt-2 justify-content-around" data-controller="form">
+      <%= f.button :submit, "HELP OUT", data: { target: "form.submitLink", needuser: @need.user.first_name }, class: "p-0 d-none" %>
+      <span class="fas fa-arrow-right" data-action="click->form#confirm"></span>
+    </div>
+  <% end %>
+<% end %>
