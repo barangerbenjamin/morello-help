@@ -30,7 +30,7 @@ if (alert) {
 const messageContent = document.getElementById("message_content");
 if (messageContent) {
   const form = document.querySelector(".chat-form");
-  form.addEventListener("submit", () => {
+  form.addEventListener("ajax:success", () => {
     messageContent.value = "";
   });
 }
