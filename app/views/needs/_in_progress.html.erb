@@ -8,7 +8,7 @@
     <i class="i-show fas fa-user-circle"></i>
   <% end %>
   <p class="mt-2"><%= @service.user.first_name.upcase %> HAS PLEDGED TO HELP YOU</p>
-  <p>CHECK YOUR MESSAGES TO SEE IF HE/SHE HAS BEEN IN TOUCH!</p>
+  <p class="mt-3">YOU CAN EXCHANGE WITH <%= @helper.first_name.upcase %> BELOW</p>
 <% elsif current_user == @helper %>
   <p>YOU ARE HELPING <%= @need.user.first_name.upcase %></p>
   <p>FROM THE <%= @need.user.complex.upcase %> COMPLEX</p>
@@ -25,6 +25,7 @@
       <span class="fas fa-arrow-right" data-action="click->form#confirm"></span>
     </div>
   <% end %>
+  <p class="mt-3">YOU CAN EXCHANGE WITH <%= @owner.first_name.upcase %> BELOW</p>
 <% else %>
   <% if @service.user.photo.attached? %>
     <%= cl_image_tag @service.user.photo.key, class: "avatar-big avatar-show" %>

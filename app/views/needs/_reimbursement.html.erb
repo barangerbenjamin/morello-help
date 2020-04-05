@@ -11,6 +11,7 @@
     <%= link_to "confirm", confirm_reimbursement_service_path(@service), method: :patch, class: "d-none p-0", data: { target: "form.submitLink", needuser: @service.user.first_name } %>
     <span class="fas fa-hand-holding-usd" data-action="click->form#confirmMoney"></span>
   </div>
+  <p class="mt-3">YOU CAN EXCHANGE WITH <%= @helper.first_name.upcase %> BELOW</p>
 <% elsif current_user == @helper %>
   <p>YOU HAVE HELPED <%= @need.user.first_name.upcase %></p>
   <p>FROM THE <%= @need.user.complex.upcase %> COMPLEX</p>
@@ -20,6 +21,7 @@
   <p>A BIG THANK YOU FOR HELPING OUR COMMUNITY</p>
   <p>WE HAVE NOTIFIED <%= @need.user.first_name.upcase %> SO YOU CAN BE REIMBURSED ASAP!</p>
   <p class="mt-2">HAVE A LOVELY DAY</p>
+  <p class="mt-3">YOU CAN EXCHANGE WITH <%= @owner.first_name.upcase %> BELOW</p>
 <% else %>
   <% if @service.user.photo.attached? %>
     <%= cl_image_tag @service.user.photo.key, class: "avatar-big avatar-show" %>
