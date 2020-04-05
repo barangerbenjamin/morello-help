@@ -1,14 +1,13 @@
 <div class="msg message-container" id="message-<%= message.id %>">
   <div class="bubble <%= 'alt' if message.user == current_user %>">
     <div class="txt">
-      <div class="d-flex align-items-center justify-content-around">
+      <div class="d-flex align-items-center justify-content-between">
         <span class="name mr-1 <%= 'alt' if message.user == current_user %>"><%= message.user.first_name %></span>
         <span class="timestamp mb-1"><%= message.created_at.strftime("%l %M %p") %></span>      
       </div>
       <span class="message">
         <%= message.content %>
-      </span> 
-      
+      </span>
     </div>
     <div class="bubble-arrow <%= 'alt' if message.user == current_user %>"></div>
   </div>

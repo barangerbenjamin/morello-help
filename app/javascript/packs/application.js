@@ -26,3 +26,11 @@ if (alert) {
     $(".alert").fadeOut()
   }, 5000);
 }
+
+const messageContent = document.getElementById("message_content");
+if (messageContent) {
+  const form = document.querySelector(".chat-form");
+  form.addEventListener("submit", () => {
+    messageContent.value = "";
+  });
+}

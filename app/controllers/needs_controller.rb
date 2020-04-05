@@ -11,6 +11,7 @@ class NeedsController < ApplicationController
         @helper = @service.user
         @chatroom = @service.chatroom
       end
+      @other_user = current_user
     end
 
     def new
